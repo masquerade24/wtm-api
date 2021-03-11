@@ -1,4 +1,3 @@
-const convert = require('xml-js');
 const request = require('request');
 
 const drugInfo = (itemName, callback) => {

@@ -45,6 +45,7 @@ function login(req, res) {
     models.User
         .findOne({ where: { email: req.body.email } })
         .then(user => {
+            console.log(user.dataValues);
             if (user === null) {
                 res.status(401).json({
                     message: 'Invalid credentials!'
@@ -57,7 +58,7 @@ function login(req, res) {
                             name: user.name,
                         }, process.env.JWT_SECRET, function (err, token) {
                             res.status(200).json({
-                                message: 'Authentication successful!',
+                                message: '로그인 성공! 토큰이 정상적으로 발급되었습니다!',
                                 token,
                             });
                         });
