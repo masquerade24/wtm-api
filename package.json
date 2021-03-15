@@ -4,7 +4,7 @@
   "description": "wtm's REST API server",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production PORT=80 pm2 start server.js",
+    "start": "cross-env NODE_ENV=production PORT=80 pm2 start server.js -i 0",
     "test": "nodemon server"
   },
   "keywords": [],
